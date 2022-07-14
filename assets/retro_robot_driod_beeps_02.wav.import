@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/retro_robot_driod_beeps_02.wav-f86b06d78154d4d4f9b07d24e1ec9ce4.sample"
+
+[deps]
+
+source_file="res://assets/retro_robot_driod_beeps_02.wav"
+dest_files=[ "res://.import/retro_robot_driod_beeps_02.wav-f86b06d78154d4d4f9b07d24e1ec9ce4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
