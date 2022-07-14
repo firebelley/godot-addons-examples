@@ -13,6 +13,10 @@ config_version=4
 config/name="godot-node-library"
 config/icon="res://icon.png"
 
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/node-library/plugin.cfg" )

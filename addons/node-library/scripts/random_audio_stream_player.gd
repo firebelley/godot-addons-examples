@@ -11,6 +11,17 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 
+func _get_configuration_warning():
+	if streams == null && get_child_count() > 0:
+		return "Stream array is out of sync with children. Children should be configured only through the streams property of %s." % name
+	if get_child_count() != streams.size():
+		return "Stream array is out of sync with children. Children should be configured only through the streams property of %s." % name
+	for i in range(get_child_count()):
+		var child = get_child(i)
+		if child.stream != streams[i]:
+			return "Node [{childName}] is out of sync with the streams array of {rootName}.".format({ "childName": child.name, "rootName": name })
+	return ""
+
 func play(): 
 	var validChildren = []
 	for child in get_children():
@@ -24,6 +35,7 @@ func play():
 	var child = validChildren[randomIndex] as AudioStreamPlayer
 	if randomizePitch:
 		child.pitch_scale = rng.randf_range(pitchMininimum, pitchMaximum)
+	child.play()
 	
 func play_times(times: int):
 	for i in range(times):
