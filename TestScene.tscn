@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/node-library/scripts/random_audio_stream_player.gd" type="Script" id=1]
+[ext_resource path="res://assets/retro_robot_driod_beeps_02.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/retro_robot_driod_beeps_01.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/retro_robot_driod_beeps_03.wav" type="AudioStream" id=4]
+
+[node name="TestScene" type="Node"]
+
+[node name="RandomAudioStreamPlayer" type="Node" parent="."]
+script = ExtResource( 1 )
+streams = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+randomizePitch = true
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
+stream = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
+stream = ExtResource( 3 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
+stream = ExtResource( 4 )

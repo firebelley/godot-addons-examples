@@ -1,7 +1,33 @@
 tool
-extends AudioStreamPlayer
+extends Node
 
 export(Array, AudioStream) var streams = [] setget set_streams, get_streams
+export(bool) var randomizePitch = false
+export(float, 0, 10, .05) var pitchMininimum = .9
+export(float, 0, 10, .05) var pitchMaximum = 1.1
+
+var rng = RandomNumberGenerator.new()
+
+func _ready():
+	rng.randomize()
+
+func play(): 
+	var validChildren = []
+	for child in get_children():
+		if !child.playing:
+			validChildren.append(child)
+	
+	if validChildren.size() == 0:
+		return
+	
+	var randomIndex = rng.randi_range(0, validChildren.size() - 1)
+	var child = validChildren[randomIndex] as AudioStreamPlayer
+	if randomizePitch:
+		child.pitch_scale = rng.randf_range(pitchMininimum, pitchMaximum)
+	
+func play_times(times: int):
+	for i in range(times):
+		play()
 
 func remove_stream_player(node: AudioStreamPlayer):
 	node.owner = null
