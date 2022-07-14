@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/node-library/scripts/random_audio_stream_player.gd" type="Script" id=1]
 [ext_resource path="res://assets/retro_robot_driod_beeps_02.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/retro_robot_driod_beeps_01.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/retro_robot_driod_beeps_03.wav" type="AudioStream" id=4]
 [ext_resource path="res://TestScene.gd" type="Script" id=5]
+[ext_resource path="res://addons/node-library/scripts/random_timer.gd" type="Script" id=6]
 
 [node name="TestScene" type="Node"]
 script = ExtResource( 5 )
@@ -12,7 +13,6 @@ script = ExtResource( 5 )
 [node name="RandomAudioStreamPlayer" type="Node" parent="."]
 script = ExtResource( 1 )
 streams = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]
-randomizePitch = true
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
 stream = ExtResource( 3 )
@@ -23,20 +23,34 @@ stream = ExtResource( 2 )
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
 stream = ExtResource( 4 )
 
+[node name="RandomTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 6 )
+min_wait_time = 1
+max_wait_time = 5.0
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 404.0
-margin_top = 290.0
+margin_top = 275.0
 margin_right = 619.0
-margin_bottom = 310.0
+margin_bottom = 325.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+custom_constants/separation = 10
 
 [node name="RandomAudioStreamPlayerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_right = 215.0
 margin_bottom = 20.0
+text = "Play RandomAudioStreamPlayer"
+
+[node name="RandomTimerButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 30.0
+margin_right = 215.0
+margin_bottom = 50.0
 text = "Play RandomAudioStreamPlayer"
