@@ -15,6 +15,7 @@ func _ready():
 	random_timer = get_node("RandomTimer")
 
 	get_node("%RandomAudioStreamPlayerButton").connect("pressed", self, "on_random_audio_stream_player_pressed")
+	get_node("%RandomAudioStreamPlayer2DButton").connect("pressed", self, "on_random_audio_stream_player_2d_pressed")
 	random_timer_button.connect("pressed", self, "on_random_timer_pressed")
 
 
@@ -24,6 +25,9 @@ func _process(_delta):
 
 func on_random_audio_stream_player_pressed():
 	get_node("RandomAudioStreamPlayer").play()
+
+func on_random_audio_stream_player_2d_pressed():
+	get_node("%RandomAudioStreamPlayer2D").play()
 
 
 func on_random_timer_pressed():

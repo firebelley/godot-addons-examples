@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="godot-node-library"
+run/main_scene="res://TestScene.tscn"
 config/icon="res://icon.png"
 
 [debug]
