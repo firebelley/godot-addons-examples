@@ -8,11 +8,19 @@
 
 config_version=4
 
+[addons]
+
+godot_node_library/enable_screen_transition=true
+
 [application]
 
 config/name="godot-node-library"
 run/main_scene="res://TestScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ScreenTransition="*res://addons/node-library/scenes/ScreenTransition.tscn"
 
 [debug]
 
