@@ -12,9 +12,9 @@ var screen_transition_scene = preload("scenes/ScreenTransition.tscn")
 
 
 func _enter_tree():
-	add_custom_type(RANDOM_AUDIO_STREAM_PLAYER, "Node", preload("scripts/random_audio_stream_player.gd"), null)
-	add_custom_type(RANDOM_AUDIO_STREAM_PLAYER_2D, "Node2D", preload("scripts/random_audio_stream_player_2d.gd"), null)
-	add_custom_type(RANDOM_TIMER, "Timer", preload("scripts/random_timer.gd"), null)
+	add_custom_type(RANDOM_AUDIO_STREAM_PLAYER, "Node", preload("scripts/random_audio_stream_player.gd"), preload("assets/icons/random_audio_stream_player_16x16.png"))
+	add_custom_type(RANDOM_AUDIO_STREAM_PLAYER_2D, "Node2D", preload("scripts/random_audio_stream_player_2d.gd"), preload("assets/icons/random_audio_stream_player_2d_16x16.png"))
+	add_custom_type(RANDOM_TIMER, "Timer", preload("scripts/random_timer.gd"), preload("assets/icons/random_timer_16x16.png"))
 
 	ProjectSettings.connect("project_settings_changed", self, "on_project_settings_changed")
 
