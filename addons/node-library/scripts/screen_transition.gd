@@ -6,12 +6,15 @@ signal transitioned_fully
 
 onready var animation_player = $AnimationPlayer
 
+
 func _enter_tree():
 	add_to_group(name)
 
 
-func _ready():
-	print("hello")
+func transition_to_scene(scene_path: String):
+	transition()
+	yield(self, "transitioned_halfway")
+	get_tree().change_scene(scene_path)
 
 
 func transition():
@@ -19,7 +22,6 @@ func transition():
 		animation_player.stop()
 		animation_player.seek(0, true)
 	animation_player.play("transition")
-
 
 func set_transition_texture(texture: Texture):
 	get_node("TransitionRect").material.set_shader_param("transition_texture", texture)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TestSceneTransition.gd" type="Script" id=1]
+
+[node name="TestSceneTransition" type="Node"]
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+margin_left = 491.0
+margin_top = 290.0
+margin_right = 533.0
+margin_bottom = 310.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"

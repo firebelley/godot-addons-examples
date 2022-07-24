@@ -27,6 +27,7 @@ func _exit_tree():
 	remove_custom_type(RANDOM_AUDIO_STREAM_PLAYER)
 	remove_custom_type(RANDOM_AUDIO_STREAM_PLAYER_2D)
 	remove_custom_type(RANDOM_TIMER)
+
 	remove_autoload_singleton(AUTOLOAD_SCREEN_TRANSITION)
 
 

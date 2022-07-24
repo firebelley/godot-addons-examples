@@ -5,17 +5,15 @@ var random_timer_button: Button
 
 
 func _ready():
-	random_timer_button = get_node("%RandomTimerButton")
-	random_timer = get_node("RandomTimer")
+	randomize()
 
-	get_node("%RandomAudioStreamPlayerButton").connect("pressed", self, "on_random_audio_stream_player_pressed")
-	get_node("%RandomAudioStreamPlayer2DButton").connect("pressed", self, "on_random_audio_stream_player_2d_pressed")
+	random_timer_button = $"%RandomTimerButton"
+	random_timer = $"RandomTimer"
+
+	$"%RandomAudioStreamPlayerButton".connect("pressed", self, "on_random_audio_stream_player_pressed")
+	$"%RandomAudioStreamPlayer2DButton".connect("pressed", self, "on_random_audio_stream_player_2d_pressed")
+	$"%ScreenTransitionButton".connect("pressed", self, "on_screen_transition_pressed")
 	random_timer_button.connect("pressed", self, "on_random_timer_pressed")
-
-	ScreenTransition.set_transition_color(Color.aliceblue)
-	ScreenTransition.transition()
-	yield(ScreenTransition, "transitioned_halfway")
-	print("yep")
 
 
 func _process(_delta):
@@ -23,12 +21,34 @@ func _process(_delta):
 
 
 func on_random_audio_stream_player_pressed():
-	get_node("RandomAudioStreamPlayer").play()
+	$"RandomAudioStreamPlayer".play()
 
 
 func on_random_audio_stream_player_2d_pressed():
-	get_node("%RandomAudioStreamPlayer2D").play()
+	$"%RandomAudioStreamPlayer2D".play()
 
 
 func on_random_timer_pressed():
 	random_timer.start()
+
+
+func on_screen_transition_pressed():
+	var colors = [
+		Color.black,
+		Color.blueviolet,
+		Color.goldenrod,
+		Color.aliceblue,
+		Color.sienna
+	]
+
+	var textures = [
+		load("res://addons/node-library/assets/transition-texture.png"),
+		load("res://assets/textures/screen-transition-alternate.png"),
+		load("res://assets/textures/screen-transition-alternate2.png")
+	]
+
+	var color_index = randi() % colors.size()
+	var texture_index = randi() % textures.size()
+	ScreenTransition.set_transition_color(colors[color_index])
+	ScreenTransition.set_transition_texture(textures[texture_index])
+	ScreenTransition.transition_to_scene("res://TestSceneTransition.tscn")
