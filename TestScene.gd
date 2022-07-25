@@ -13,6 +13,7 @@ func _ready():
 	$"%RandomAudioStreamPlayerButton".connect("pressed", self, "on_random_audio_stream_player_pressed")
 	$"%RandomAudioStreamPlayer2DButton".connect("pressed", self, "on_random_audio_stream_player_2d_pressed")
 	$"%ScreenTransitionButton".connect("pressed", self, "on_screen_transition_pressed")
+	$"%ShakyCamera2DButton".connect("pressed", self, "on_shaky_camera_2d_pressed")
 	random_timer_button.connect("pressed", self, "on_random_timer_pressed")
 
 
@@ -21,7 +22,7 @@ func _process(_delta):
 
 
 func on_random_audio_stream_player_pressed():
-	$"RandomAudioStreamPlayer".play()
+	$RandomAudioStreamPlayer.play()
 
 
 func on_random_audio_stream_player_2d_pressed():
@@ -52,3 +53,7 @@ func on_screen_transition_pressed():
 	ScreenTransition.set_transition_color(colors[color_index])
 	ScreenTransition.set_transition_texture(textures[texture_index])
 	ScreenTransition.transition_to_scene("res://TestSceneTransition.tscn")
+
+
+func on_shaky_camera_2d_pressed():
+	$ShakyCamera2D.shake()
