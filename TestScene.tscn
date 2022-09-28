@@ -106,6 +106,7 @@ stream = ExtResource( 4 )
 [node name="RandomTimer" type="Timer" parent="."]
 one_shot = true
 script = ExtResource( 6 )
+min_wait_time = 1
 max_wait_time = 5.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -160,3 +161,6 @@ position = Vector2( 512, 300 )
 current = true
 script = ExtResource( 10 )
 shake_noise = SubResource( 3 )
+max_shake_offset = 20
+shake_decay = 5
+shake_frequency = 50
