@@ -43,7 +43,7 @@ func on_screen_transition_pressed():
 	]
 
 	var textures = [
-		load("res://addons/node-library/assets/transition-texture.png"),
+		load("res://addons/node_library/assets/transition-texture.png"),
 		load("res://assets/textures/screen-transition-alternate.png"),
 		load("res://assets/textures/screen-transition-alternate2.png")
 	]

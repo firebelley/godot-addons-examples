@@ -1,15 +1,15 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://addons/node-library/scripts/random_audio_stream_player.gd" type="Script" id=1]
+[ext_resource path="res://addons/node_library/scripts/random_audio_stream_player.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/retro_robot_driod_beeps_02.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/audio/retro_robot_driod_beeps_01.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/audio/retro_robot_driod_beeps_03.wav" type="AudioStream" id=4]
 [ext_resource path="res://TestScene.gd" type="Script" id=5]
-[ext_resource path="res://addons/node-library/scripts/random_timer.gd" type="Script" id=6]
-[ext_resource path="res://addons/node-library/scripts/random_audio_stream_player_2d.gd" type="Script" id=7]
+[ext_resource path="res://addons/node_library/scripts/random_timer.gd" type="Script" id=6]
+[ext_resource path="res://addons/node_library/scripts/random_audio_stream_player_2d.gd" type="Script" id=7]
 [ext_resource path="res://assets/audio/retro_robot_driod_beeps_04.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/audio/retro_robot_driod_beeps_05.wav" type="AudioStream" id=9]
-[ext_resource path="res://addons/node-library/scripts/shaky_camera_2d.gd" type="Script" id=10]
+[ext_resource path="res://addons/node_library/scripts/shaky_camera_2d.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
 length = 0.001

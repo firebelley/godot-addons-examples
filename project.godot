@@ -10,7 +10,7 @@ config_version=4
 
 [addons]
 
-godot_node_library/enable_screen_transition=true
+node_library/enable_screen_transition=true
 
 [application]
 
@@ -20,7 +20,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-ScreenTransition="*res://addons/node-library/scenes/ScreenTransition.tscn"
+ScreenTransition="*res://addons/node_library/scenes/ScreenTransition.tscn"
 
 [debug]
 
@@ -28,11 +28,15 @@ gdscript/warnings/return_value_discarded=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/node-library/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/center_pivot_offset/plugin.cfg", "res://addons/node_library/plugin.cfg", "res://addons/retile/plugin.cfg" )
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[mono]
+
+project/assembly_name="godot-node-library"
 
 [physics]
 
