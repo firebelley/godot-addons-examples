@@ -1,166 +1,164 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=3 uid="uid://6bwc8j2yi1nk"]
 
-[ext_resource path="res://addons/node_library/scripts/random_audio_stream_player.gd" type="Script" id=1]
-[ext_resource path="res://assets/audio/retro_robot_driod_beeps_02.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/audio/retro_robot_driod_beeps_01.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/audio/retro_robot_driod_beeps_03.wav" type="AudioStream" id=4]
-[ext_resource path="res://TestScene.gd" type="Script" id=5]
-[ext_resource path="res://addons/node_library/scripts/random_timer.gd" type="Script" id=6]
-[ext_resource path="res://addons/node_library/scripts/random_audio_stream_player_2d.gd" type="Script" id=7]
-[ext_resource path="res://assets/audio/retro_robot_driod_beeps_04.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/audio/retro_robot_driod_beeps_05.wav" type="AudioStream" id=9]
-[ext_resource path="res://addons/node_library/scripts/shaky_camera_2d.gd" type="Script" id=10]
+[ext_resource type="Script" path="res://addons/node_library/scripts/random_audio_stream_player.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dt5uf3rgigobs" path="res://assets/audio/retro_robot_driod_beeps_02.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://r2oowhvrtk8t" path="res://assets/audio/retro_robot_driod_beeps_01.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://mmhsdf8hjyik" path="res://assets/audio/retro_robot_driod_beeps_03.wav" id="4"]
+[ext_resource type="Script" path="res://TestScene.gd" id="5"]
+[ext_resource type="Script" path="res://addons/node_library/scripts/random_timer.gd" id="6"]
+[ext_resource type="Script" path="res://addons/node_library/scripts/random_audio_stream_player_2d.gd" id="7"]
+[ext_resource type="AudioStream" uid="uid://bg60tsrem63sy" path="res://assets/audio/retro_robot_driod_beeps_04.wav" id="8"]
+[ext_resource type="AudioStream" uid="uid://b383ymi3rkhod" path="res://assets/audio/retro_robot_driod_beeps_05.wav" id="9"]
+[ext_resource type="Script" path="res://addons/node_library/scripts/shaky_camera_2d.gd" id="10"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 192 ) ]
+"values": [Vector2(0, 192)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "default"
 length = 4.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 192 ), Vector2( 984, 192 ) ]
+"values": [Vector2(0, 192), Vector2(984, 192)]
 }
 
-[sub_resource type="OpenSimplexNoise" id=3]
-seed = -1626828106
-period = 2.0
-persistence = 0.414
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kivw4"]
+_data = {
+"RESET": SubResource("1"),
+"default": SubResource("2")
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yrgnu"]
+noise_type = 3
+seed = -1182745966
+frequency = 2.0
+metadata/_preview_in_3d_space_ = true
 
 [node name="TestScene" type="Node"]
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="Audio2DDemo" type="Node2D" parent="."]
-position = Vector2( 0, 192 )
+position = Vector2(0, 192)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Audio2DDemo"]
 autoplay = "default"
-anims/RESET = SubResource( 1 )
-anims/default = SubResource( 2 )
+libraries = {
+"": SubResource("AnimationLibrary_kivw4")
+}
 
 [node name="ColorRect" type="ColorRect" parent="Audio2DDemo"]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="RandomAudioStreamPlayer2D" type="Node2D" parent="Audio2DDemo"]
 unique_name_in_owner = true
-script = ExtResource( 7 )
-streams = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ) ]
+script = ExtResource("7")
+streams = [ExtResource("3"), ExtResource("2"), ExtResource("4"), ExtResource("8"), ExtResource("9")]
 randomize_pitch = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 max_distance = 600.0
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource( 2 )
+stream = ExtResource("2")
 max_distance = 600.0
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource( 4 )
+stream = ExtResource("4")
 max_distance = 600.0
 
 [node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource( 8 )
+stream = ExtResource("8")
 max_distance = 600.0
 
 [node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource( 9 )
+stream = ExtResource("9")
 max_distance = 600.0
 
 [node name="RandomAudioStreamPlayer" type="Node" parent="."]
-script = ExtResource( 1 )
-streams = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]
+script = ExtResource("1")
+streams = [ExtResource("3"), ExtResource("2"), ExtResource("4")]
 randomize_pitch = true
 
 [node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
-stream = ExtResource( 3 )
+stream = ExtResource("3")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
-stream = ExtResource( 2 )
+stream = ExtResource("2")
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
-stream = ExtResource( 4 )
+stream = ExtResource("4")
 
 [node name="RandomTimer" type="Timer" parent="."]
 one_shot = true
-script = ExtResource( 6 )
-min_wait_time = 1
+script = ExtResource("6")
+min_wait_time = 1.0
 max_wait_time = 5.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 395.0
-margin_top = 230.0
-margin_right = 628.0
-margin_bottom = 370.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-custom_constants/separation = 10
 
 [node name="ShakyCamera2DButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_right = 233.0
-margin_bottom = 20.0
+layout_mode = 2
 text = "Shake ShakyCamera2D"
 
 [node name="RandomAudioStreamPlayerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 30.0
-margin_right = 233.0
-margin_bottom = 50.0
+layout_mode = 2
 text = "Play RandomAudioStreamPlayer"
 
 [node name="RandomAudioStreamPlayer2DButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 60.0
-margin_right = 233.0
-margin_bottom = 80.0
+layout_mode = 2
 text = "Play RandomAudioStreamPlayer2D"
 
 [node name="RandomTimerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 90.0
-margin_right = 233.0
-margin_bottom = 110.0
+layout_mode = 2
 text = "Start RandomTimer"
 
 [node name="ScreenTransitionButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 120.0
-margin_right = 233.0
-margin_bottom = 140.0
+layout_mode = 2
 text = "Screen Transition"
 
 [node name="ShakyCamera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 300 )
+position = Vector2(512, 300)
 current = true
-script = ExtResource( 10 )
-shake_noise = SubResource( 3 )
-max_shake_offset = 20
-shake_decay = 5
-shake_frequency = 50
+script = ExtResource("10")
+shake_noise = SubResource("FastNoiseLite_yrgnu")
+max_shake_offset = 20.0
+shake_decay = 5.0
+shake_frequency = 50.0
+visualize = false

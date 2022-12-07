@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-	$"%BackButton".connect("pressed", self, "on_back_button_pressed")
+	$"%BackButton".connect("pressed",Callable(self,"on_back_button_pressed"))
 
 
 func on_back_button_pressed():

@@ -6,7 +6,7 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [addons]
 
@@ -16,6 +16,7 @@ node_library/enable_screen_transition=true
 
 config/name="godot-node-library"
 run/main_scene="res://TestScene.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [autoload]
@@ -26,9 +27,13 @@ ScreenTransition="*res://addons/node_library/scenes/ScreenTransition.tscn"
 
 gdscript/warnings/return_value_discarded=false
 
+[dotnet]
+
+project/assembly_name="godot-node-library"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/center_pivot_offset/plugin.cfg", "res://addons/node_library/plugin.cfg", "res://addons/retile/plugin.cfg" )
+enabled=PackedStringArray()
 
 [gui]
 

@@ -1,0 +1,5 @@
+res://TestScene.tscn
+res://addons/node_library/scripts/random_timer.gd
+res://addons/node_library/scripts/shaky_camera_2d.gd
+res://addons/node_library/scripts/random_audio_stream_player_2d.gd
+res://addons/node_library/scripts/random_audio_stream_player.gd
