@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/retro_robot_driod_beeps_04.wav-0db390b4f9f80e89d3a6a445dd076728.sample"
+type="AudioStreamWAV"
+uid="uid://bg60tsrem63sy"
+path="res://.godot/imported/retro_robot_driod_beeps_04.wav-0db390b4f9f80e89d3a6a445dd076728.sample"
 
 [deps]
 
 source_file="res://assets/audio/retro_robot_driod_beeps_04.wav"
-dest_files=[ "res://.import/retro_robot_driod_beeps_04.wav-0db390b4f9f80e89d3a6a445dd076728.sample" ]
+dest_files=["res://.godot/imported/retro_robot_driod_beeps_04.wav-0db390b4f9f80e89d3a6a445dd076728.sample"]
 
 [params]
 

@@ -10,11 +10,11 @@ func _ready():
 	random_timer_button = $"%RandomTimerButton"
 	random_timer = $"RandomTimer"
 
-	$"%RandomAudioStreamPlayerButton".connect("pressed", self, "on_random_audio_stream_player_pressed")
-	$"%RandomAudioStreamPlayer2DButton".connect("pressed", self, "on_random_audio_stream_player_2d_pressed")
-	$"%ScreenTransitionButton".connect("pressed", self, "on_screen_transition_pressed")
-	$"%ShakyCamera2DButton".connect("pressed", self, "on_shaky_camera_2d_pressed")
-	random_timer_button.connect("pressed", self, "on_random_timer_pressed")
+	$"%RandomAudioStreamPlayerButton".connect("pressed",Callable(self,"on_random_audio_stream_player_pressed"))
+	$"%RandomAudioStreamPlayer2DButton".connect("pressed",Callable(self,"on_random_audio_stream_player_2d_pressed"))
+	$"%ScreenTransitionButton".connect("pressed",Callable(self,"on_screen_transition_pressed"))
+	$"%ShakyCamera2DButton".connect("pressed",Callable(self,"on_shaky_camera_2d_pressed"))
+	random_timer_button.connect("pressed",Callable(self,"on_random_timer_pressed"))
 
 
 func _process(_delta):
@@ -35,11 +35,11 @@ func on_random_timer_pressed():
 
 func on_screen_transition_pressed():
 	var colors = [
-		Color.black,
-		Color.blueviolet,
-		Color.goldenrod,
-		Color.aliceblue,
-		Color.sienna
+		Color.BLACK,
+		Color.BLUE_VIOLET,
+		Color.GOLDENROD,
+		Color.ALICE_BLUE,
+		Color.SIENNA
 	]
 
 	var textures = [
