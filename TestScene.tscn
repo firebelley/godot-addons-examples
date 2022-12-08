@@ -29,6 +29,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="2"]
 resource_name = "default"
 length = 4.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -124,33 +125,45 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+offset_left = 436.0
+offset_top = 238.0
+offset_right = 715.0
+offset_bottom = 409.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="ShakyCamera2DButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_right = 279.0
+offset_bottom = 31.0
 text = "Shake ShakyCamera2D"
 
 [node name="RandomAudioStreamPlayerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_top = 35.0
+offset_right = 279.0
+offset_bottom = 66.0
 text = "Play RandomAudioStreamPlayer"
 
 [node name="RandomAudioStreamPlayer2DButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_top = 70.0
+offset_right = 279.0
+offset_bottom = 101.0
 text = "Play RandomAudioStreamPlayer2D"
 
 [node name="RandomTimerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_top = 105.0
+offset_right = 279.0
+offset_bottom = 136.0
 text = "Start RandomTimer"
 
 [node name="ScreenTransitionButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_top = 140.0
+offset_right = 279.0
+offset_bottom = 171.0
 text = "Screen Transition"
 
 [node name="ShakyCamera2D" type="Camera2D" parent="."]

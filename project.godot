@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Timer",
+"class": &"RandomTimer",
+"language": &"GDScript",
+"path": "res://addons/node_library/scripts/random_timer.gd"
+}]
+_global_script_class_icons={
+"RandomTimer": ""
+}
+
 [addons]
 
 node_library/enable_screen_transition=true
@@ -19,10 +29,6 @@ run/main_scene="res://TestScene.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
-[autoload]
-
-ScreenTransition="*res://addons/node_library/scenes/ScreenTransition.tscn"
-
 [debug]
 
 gdscript/warnings/return_value_discarded=false
@@ -33,7 +39,7 @@ project/assembly_name="godot-node-library"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/center_pivot_offset/plugin.cfg", "res://addons/retile/plugin.cfg")
 
 [gui]
 

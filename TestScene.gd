@@ -1,6 +1,6 @@
 extends Node
 
-var random_timer: Timer
+var random_timer: RandomTimer
 var random_timer_button: Button
 
 
@@ -30,7 +30,7 @@ func on_random_audio_stream_player_2d_pressed():
 
 
 func on_random_timer_pressed():
-	random_timer.start()
+	random_timer.start_random()
 
 
 func on_screen_transition_pressed():
@@ -50,6 +50,7 @@ func on_screen_transition_pressed():
 
 	var color_index = randi() % colors.size()
 	var texture_index = randi() % textures.size()
+
 	ScreenTransition.set_transition_color(colors[color_index])
 	ScreenTransition.set_transition_texture(textures[texture_index])
 	ScreenTransition.transition_to_scene("res://TestSceneTransition.tscn")
