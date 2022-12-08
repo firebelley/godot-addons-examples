@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [addons]
 
-node_library/enable_screen_transition=true
+node_library/enable_screen_transition=false
 
 [application]
 
@@ -28,6 +28,10 @@ config/name="godot-node-library"
 run/main_scene="res://TestScene.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
+
+[autoload]
+
+ScreenTransition="*res://addons/node_library/scenes/ScreenTransition.tscn"
 
 [debug]
 
@@ -39,7 +43,7 @@ project/assembly_name="godot-node-library"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/center_pivot_offset/plugin.cfg", "res://addons/retile/plugin.cfg")
+enabled=PackedStringArray("res://addons/retile/plugin.cfg", "res://addons/center_pivot_offset/plugin.cfg", "res://addons/node_library/plugin.cfg")
 
 [gui]
 
