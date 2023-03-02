@@ -71,50 +71,22 @@ libraries = {
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RandomAudioStreamPlayer2D" type="Node2D" parent="Audio2DDemo"]
+[node name="RandomAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio2DDemo"]
 unique_name_in_owner = true
+position = Vector2(0, -192)
 script = ExtResource("7")
-streams = [ExtResource("3"), ExtResource("2"), ExtResource("4"), ExtResource("8"), ExtResource("9")]
+streams = Array[AudioStream]([ExtResource("3"), ExtResource("2"), ExtResource("4"), ExtResource("8"), ExtResource("9")])
 randomize_pitch = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource("3")
-max_distance = 600.0
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource("2")
-max_distance = 600.0
-
-[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource("4")
-max_distance = 600.0
-
-[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource("8")
-max_distance = 600.0
-
-[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="Audio2DDemo/RandomAudioStreamPlayer2D"]
-stream = ExtResource("9")
-max_distance = 600.0
-
-[node name="RandomAudioStreamPlayer" type="Node" parent="."]
+[node name="RandomAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1")
-streams = [ExtResource("3"), ExtResource("2"), ExtResource("4")]
+streams = Array[AudioStream]([ExtResource("3"), ExtResource("2"), ExtResource("4"), ExtResource("8"), ExtResource("9")])
 randomize_pitch = true
-
-[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
-stream = ExtResource("3")
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
-stream = ExtResource("2")
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="RandomAudioStreamPlayer"]
-stream = ExtResource("4")
 
 [node name="RandomTimer" type="Timer" parent="."]
 one_shot = true
 script = ExtResource("6")
-min_wait_time = 1.0
 max_wait_time = 5.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -125,53 +97,36 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-offset_left = 436.0
-offset_top = 238.0
-offset_right = 715.0
-offset_bottom = 409.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="ShakyCamera2DButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_right = 279.0
-offset_bottom = 31.0
+layout_mode = 2
 text = "Shake ShakyCamera2D"
 
 [node name="RandomAudioStreamPlayerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 35.0
-offset_right = 279.0
-offset_bottom = 66.0
+layout_mode = 2
 text = "Play RandomAudioStreamPlayer"
 
 [node name="RandomAudioStreamPlayer2DButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 70.0
-offset_right = 279.0
-offset_bottom = 101.0
+layout_mode = 2
 text = "Play RandomAudioStreamPlayer2D"
 
 [node name="RandomTimerButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 105.0
-offset_right = 279.0
-offset_bottom = 136.0
+layout_mode = 2
 text = "Start RandomTimer"
 
 [node name="ScreenTransitionButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 140.0
-offset_right = 279.0
-offset_bottom = 171.0
+layout_mode = 2
 text = "Screen Transition"
 
 [node name="ShakyCamera2D" type="Camera2D" parent="."]
 position = Vector2(512, 300)
-current = true
 script = ExtResource("10")
 shake_noise = SubResource("FastNoiseLite_yrgnu")
-max_shake_offset = 20.0
-shake_decay = 5.0
-shake_frequency = 50.0
-visualize = false
