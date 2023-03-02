@@ -22,11 +22,11 @@ func _process(_delta):
 
 
 func on_random_audio_stream_player_pressed():
-	$RandomAudioStreamPlayer.play()
+	%RandomAudioStreamPlayer.play_random()
 
 
 func on_random_audio_stream_player_2d_pressed():
-	$"%RandomAudioStreamPlayer2D".play()
+	%RandomAudioStreamPlayer2D.play_random()
 
 
 func on_random_timer_pressed():

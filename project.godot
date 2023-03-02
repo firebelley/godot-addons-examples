@@ -8,16 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Timer",
-"class": &"RandomTimer",
-"language": &"GDScript",
-"path": "res://addons/node_library/scripts/random_timer.gd"
-}]
-_global_script_class_icons={
-"RandomTimer": ""
-}
-
 [addons]
 
 node_library/enable_screen_transition=false
@@ -43,7 +33,7 @@ project/assembly_name="godot-node-library"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/retile/plugin.cfg", "res://addons/center_pivot_offset/plugin.cfg", "res://addons/node_library/plugin.cfg")
+enabled=PackedStringArray("res://addons/center_pivot_offset/plugin.cfg", "res://addons/node_library/plugin.cfg")
 
 [gui]
 
